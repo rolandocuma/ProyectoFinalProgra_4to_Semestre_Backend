@@ -80,10 +80,6 @@ module.exports = (sequelize, Sequelize) => {
             allowNull: true  // permitir que este campo sea nulo si es necesario
         },
 
-        copyrightby: {
-            type: Sequelize.STRING,
-            defaultValue: 'UMG Antigua'
-        }
     });
 
     return Empleados;
