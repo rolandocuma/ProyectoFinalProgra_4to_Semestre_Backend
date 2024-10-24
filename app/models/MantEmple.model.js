@@ -28,7 +28,7 @@ module.exports = (sequelize, Sequelize) => {
         },
 
         experiencia_Laboral: {
-            type: Sequelize.TEXT,
+            type: Sequelize.STRING(60),
             allowNull: true
         },
 
@@ -41,10 +41,11 @@ module.exports = (sequelize, Sequelize) => {
         },
 
         dpi: {
-            type: Sequelize.BIGINT,
+            type: Sequelize.INTEGER,
             allowNull: false,
             validate: {
-                len: [13, 13]
+                min: 13,
+                max: 13
             }
         },
 
