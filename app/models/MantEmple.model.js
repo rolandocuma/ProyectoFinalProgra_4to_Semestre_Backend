@@ -9,17 +9,11 @@ module.exports = (sequelize, Sequelize) => {
         nombres_empleado: {
             type: Sequelize.STRING(80),
             allowNull: false,
-            validate: {
-                is: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/  
-            },
         },
 
         apellidos_empleado: {
             type: Sequelize.STRING(80),
             allowNull: false,
-            validate: {
-                is: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/
-            }
         },
 
         puesto_laboral: {
@@ -55,25 +49,17 @@ module.exports = (sequelize, Sequelize) => {
         },
 
         sexo: {
-            type: Sequelize.ENUM('M', 'F'),
+            type: Sequelize.STRING('M', 'F'),
             allowNull: false
         },
 
         correo_electronico: {
             type: Sequelize.STRING(150),
             allowNull: false, 
-            unique: true,
-            validate: {
-                isEmail: true  // valida que el correo electrónico sea valido
-            }
         },
 
         telefono: {
             type: Sequelize.INTEGER,
-            validate: {
-                min: 10000000,  // valida que el telefono tenga al menos 8 dígitos
-                max: 99999999   // valida que el telefono no exceda 8 dígitos
-            }
         },
 
         direccion: {

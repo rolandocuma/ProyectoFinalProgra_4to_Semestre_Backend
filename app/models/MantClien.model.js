@@ -7,38 +7,27 @@ module.exports = (sequelize, Sequelize) => {
     },
 		nombres_cliente: {
         	type: Sequelize.STRING(80),
-        	validate: {
-          	is: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
-        },
       },
 		apellidos_cliente: {
 			type: Sequelize.STRING(80),
-        	validate: {
-          	is: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
-			}
+
 	},
 		edad_cliente: {
 			type: Sequelize.INTEGER,
-			validate: {
-			min: 18,  // La edad mínima que se permite reservar
-			max: 99 // La edad máxima que se permite reservart
-		}
 	},
 		fecha_nacimiento: {
 			type: Sequelize.DATE,
 
 	},
 		sexo: {
-			type: Sequelize.ENUM('M', 'F'),
+			type: Sequelize.STRING('M', 'F'),
 
 	},
 
 		dpi: {
-			type: Sequelize.BIGINT,
+			type: Sequelize.INTEGER,
 			allowNull: false,
-			validate: {
-			len: [13, 13]
-		}
+
 	},
 
 		correo_electronico: {
@@ -48,20 +37,13 @@ module.exports = (sequelize, Sequelize) => {
 	},
 	telefono: {
 		type: Sequelize.INTEGER,
-		validate: {
-			min: 10000000,
-			max: 99999999  
-		}
 	},
 		direccion: {
 			type: Sequelize.STRING(100),
 
 	},
 
-    copyrightby: {
-		type: Sequelize.STRING,
-		defaultValue: 'UMG Antigua'
-	  }
+
 	});
 	
 	return Clientes;

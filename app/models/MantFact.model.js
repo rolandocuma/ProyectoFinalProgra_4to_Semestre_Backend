@@ -11,9 +11,6 @@ module.exports = (sequelize, Sequelize) => {
         },
         nombre: {
             type: Sequelize.STRING(80),
-        	validate: {
-          	is: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/,
-			}
 	    },
         nit: {
             type: Sequelize.BIGINT,

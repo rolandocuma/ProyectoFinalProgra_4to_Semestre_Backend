@@ -7,26 +7,22 @@ module.exports = (sequelize, Sequelize) => {
         },
 
         nombre_prodServicio: {
-            type: Sequelize.STRING(100),
+            type: Sequelize.STRING(20),
             allowNull: false,
         },
 
         descripcion_prodServicio: {
-            type: Sequelize.TEXT, 
+            type: Sequelize.STRING(200), 
             allowNull: true,       
         },
 
         categoria: {
-            type: Sequelize.ENUM('producto', 'servicio'), //solo será producto o servicio
+            type: Sequelize.STRING('producto', 'servicio'), 
             allowNull: false, 
         },
 
         modelo: {
             type: Sequelize.STRING,
-            validate: {
-                min: 1,
-                max: 12 
-            },
             allowNull: false,
         },
 
@@ -36,32 +32,25 @@ module.exports = (sequelize, Sequelize) => {
         },
 
         precio: {
-            type: Sequelize.DECIMAL(10, 2),
+            type: Sequelize.INTEGER(10, 2),
             allowNull: false 
         },
 
         descuento: {
-            type: Sequelize.DECIMAL(3, 2),  // se cambio a DECIMAL para % de descunto
+            type: Sequelize.INTEGER(3, 2),  // se cambio a DECIMAL para % de descunto
             allowNull: true 
         },
 
         cant_disponible: {
             type: Sequelize.INTEGER,
             allowNull: false, 
-            validate: {
-                min: 0  // ahce que la cantidad disponible no sea negativa
-            }
         },
 
         estado_prodServicio: {
-            type: Sequelize.ENUM('disponible', 'agotado', 'pendiente'),
+            type: Sequelize.STRING('disponible', 'agotado', 'pendiente'),
             allowNull: false
         },
 
-        copyrightby: {
-            type: Sequelize.STRING,
-            defaultValue: 'UMG Antigua'
-        }
     });
 
     return Prod_Servicios;
