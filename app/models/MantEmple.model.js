@@ -29,18 +29,11 @@ module.exports = (sequelize, Sequelize) => {
         edad_empleado: {
             type: Sequelize.INTEGER,
             validate: {
-                min: 18,
-                max: 55 
-            }
         },
 
         dpi: {
             type: Sequelize.INTEGER,
             allowNull: false,
-            validate: {
-                min: 13,
-                max: 13
-            }
         },
 
         fecha_contratacionEmpleado: {
@@ -49,7 +42,7 @@ module.exports = (sequelize, Sequelize) => {
         },
 
         sexo: {
-            type: Sequelize.STRING('M', 'F'),
+            type: Sequelize.STRING,
             allowNull: false
         },
 
