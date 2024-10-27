@@ -32,12 +32,12 @@ module.exports = (sequelize, Sequelize) => {
         },
 
         precio: {
-            type: Sequelize.INTEGER(10, 2),
+            type: Sequelize.INTEGER,
             allowNull: false 
         },
 
         descuento: {
-            type: Sequelize.INTEGER(3, 2),  // se cambio a DECIMAL para % de descunto
+            type: Sequelize.INTEGER,  // se cambio a DECIMAL para % de descunto
             allowNull: true 
         },
 
